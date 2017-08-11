@@ -1,0 +1,17 @@
+# Site settings
+title: 萤火小时光
+# email: 1091738575@qq.com
+description: 有些歌被翻唱之后成为了经典，有些经典被翻唱之后却另有一番味道。静静地聆听，一秒倾心。
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://fireflytime.github.io" # the base hostname & protocol for your site
+twitter_username:
+github_username:
+
+members:
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+exclude: [bundle]

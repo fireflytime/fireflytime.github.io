@@ -1,0 +1,73 @@
+---
+layout: default
+---
+<div class="post">
+  <div class="row">
+    <div class="post-number col-xs-12 col-sm-1">
+      {{ page.number }}
+    </div>
+    <div class="col-xs-12 col-sm-11">
+      <h2 class="post-title">
+        {{ page.title }}
+      </h2>
+      <audio style="width: 100%" src="{{ page.audio }}" controls>
+        <p>音声を再生するには、audioタグをサポートしたブラウザが必要です。</p>
+      </audio>
+      <ul class="list-inline post-meta">
+        <li class="post-date">
+          <span class="post-date-title">时间：</span>
+          <span>{{ page.date | date: "%Y年%-m月%-d日" }}</span>
+        </li>
+        <li class="post-duration">
+          <span class="post-duration-title">时长：</span>
+          <span>{{ page.duration }}</span>
+        </li>
+      </ul>
+      <ul class="list-inline">
+<!--        <li>-->
+<!--          <!-- 微博 -->
+<!--          <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="kumocast">微博</a>-->
+<!--          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>-->
+<!--          <!-- end Twitter -->
+<!--        </li>-->
+<!--        <li>-->
+<!--           HatenaBookmark -->
+<!--          <a href="http://b.hatena.ne.jp/entry/{{ site.url  }}{{ page.url }}" class="hatena-bookmark-button" data-hatena-bookmark-title="{{ page.title }}" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>-->
+<!--           end HatenaBookmark -->
+<!--        </li>-->
+      </ul>
+      <p class="post-excerpt">
+        {{ page.description }}
+      </p>
+      <a href="http://service.weibo.com/share/share.php?appkey=&title={{ page.title }}&url={{ site.url  }}{{ page.url }}&pic='https://opinion-storage.s3.amazonaws.com/users/ying-huo-xiao-shi-guang/covers/7c6429d6-e2e0-43fd-9ca8-0a7faa74fcce.jpg'" target="_blank">
+          <img src="http://bsyimg3.cdn.krcom.cn/static20131031/miaopai20140729/pc-static/images_01/shareIco_sina01.png" alt="分享到新浪微博">
+              <a/>
+             <!--      {% if page.image %}-->
+<!--        <div class="post-image">-->
+<!--          <img src="{{ page.image }}" />-->
+<!--        </div>-->
+<!--      {% endif %}-->
+<!--      <div class="post-members">-->
+<!--        <h3 class="post-member">by</h3>-->
+<!--        <ul class="list-inline">-->
+<!--          {% for member in page.members %}-->
+<!--            <li>-->
+<!--              <a href="//twitter.com/{{ member }}">-->
+<!--                <img class="member-img" src="{{ site.members[member].icon }}">-->
+<!--                <p>-->
+<!--                  {{ member }}-->
+<!--                </p>-->
+<!--              </a>-->
+<!--            </li>-->
+<!--          {% endfor %}-->
+        </ul>
+      </div>
+      <div class="post-shownotes">
+        {{ page.content | markdownify }}
+      </div>
+    </div>
+  </div>
+  {% comment %}
+  {% include notice.html %}
+  {% endcomment %}
+</div>

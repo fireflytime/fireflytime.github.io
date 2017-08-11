@@ -1,0 +1,56 @@
+.post {
+  margin-bottom: $lg-margin;
+
+  h3 {
+    border-bottom: 1px solid #ddd;
+    color: $brand-color;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: $sm-margin;
+  }
+
+  p {
+    margin-bottom: $md-margin;
+  }
+}
+
+audio {
+  margin-top: $md-margin;
+}
+
+.post-image {
+  margin: 20px 0;
+  img {
+    padding: 5px;
+    border: 1px solid #ccc;
+  }
+}
+
+.post-members {
+  margin-bottom: $md-margin;
+
+  ul {
+    margin: 0;
+  }
+
+  p {
+    color: $text-color;
+    text-align: center;
+    margin: 2px 0 0;
+  }
+}
+
+.member-img {
+  border-radius: 80px;
+  width: 80px;
+}
+
+.post-shownotes {
+  ul {
+    margin-left: 20px;
+  }
+
+  li {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+{% comment %}
+{% include notice.html %}
+{% endcomment %}
+
+<div class="home">
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li class="post">
+        <div class="row">
+          <div class="post-number col-sm-1 col-xs-12">
+            <a href="{{ post.url | prepend: site.baseurl }}">
+              {{ post.number }}
+            </a>
+          </div>
+          <div class="col-sm-11 col-xs-12">
+            <h2 class="post-title">
+              <a href="{{ post.url | prepend: site.baseurl }}">
+                {{ post.title }}
+              </a>
+              <audio style="width: 100%" src="{{ post.audio }}" controls>
+                  <p></p>
+              </audio>
+            </h2>
+            <ul class="list-inline post-meta">
+              <li class="post-date">
+                <span class="post-date-title">时间：</span>
+                <span>{{ post.date | date: "%Y年%-m月%-d日" }}</span>
+              </li>
+              <li class="post-duration">
+                <span class="post-duration-title">时长：</span>
+                <span>{{ post.duration }}</span>
+              </li>
+            </ul>
+            <div class="post-excerpt">
+              {{ post.description }}
+            </div>
+<!--            <div class="home-members">-->
+<!--              {% for member_id in post.members %}-->
+<!--                {% assign member = site.members[member_id] %}-->
+<!--                <img src="{{ member.icon }}" alt="{{ member_id }}" title="{{ member_id }}" class="home-member-icon" width="40" height="40">-->
+<!--              {% endfor %}-->
+<!--            </div>-->
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+
+</div>

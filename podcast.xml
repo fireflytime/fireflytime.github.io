@@ -1,0 +1,41 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>{{ site.title | xml_escape }}</title>
+    <description>{{ site.description | xml_escape }}</description>
+    <link>{{ site.url }}{{ site.baseurl }}/</link>
+    <atom:link href="{{ "/podcast.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    <copyright> © {{site.time | date: "%Y" }} 萤火小时光 </copyright>
+    <media:keywords>萤火虫,小时光,Podcast</media:keywords>
+    <media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">Music</media:category>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:image href="http://ou7uptay6.bkt.clouddn.com/logo.jpg" />
+    <itunes:keywords>萤火虫,小时光,Podcast</itunes:keywords>
+    <itunes:subtitle>{{ site.description | xml_escape }}</itunes:subtitle>
+    <itunes:summary>{{ site.description | xml_escape }}</itunes:summary>
+    <itunes:category text="Music">
+    </itunes:category>
+    <itunes:author>萤火宝宝</itunes:author>
+    <language>zh</language>
+    {% for post in site.posts %}
+      <item>
+          <title>{{ post.number }}. {{ post.title | xml_escape }}</title>
+        <description>
+            {{ post.description | xml_escape }}
+            {{ post.content | xml_escape }}
+        </description>
+        <itunes:subtitle>{{ post.description | xml_escape }}</itunes:subtitle>
+        <enclosure url="{{ post.audio }}" length="{{ post.length}}" type="audio/mpeg"/>
+        <itunes:duration>{{ post.duration }}</itunes:duration>
+         <itunes:explicit>no</itunes:explicit>
+        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
+        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
+      </item>
+    {% endfor %}
+  </channel>
+</rss>
