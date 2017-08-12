@@ -39,7 +39,11 @@ layout: default
       <p class="post-excerpt">
         {{ page.description }}
       </p>
-      <a href="http://service.weibo.com/share/share.php?appkey=&title={{ page.title }}&url={{ site.url  }}{{ page.url }}&pic='https://opinion-storage.s3.amazonaws.com/users/ying-huo-xiao-shi-guang/covers/7c6429d6-e2e0-43fd-9ca8-0a7faa74fcce.jpg'" target="_blank">
+      <div class="post-shownotes">
+          {{ page.content | markdownify }}
+      </div>
+      <a href="http://service.weibo.com/share/share.php?appkey=&title={{ page.title }}&url={{ site.url  }}{{ page.url }}：{{ page.description }}
+&pic='https://opinion-storage.s3.amazonaws.com/users/ying-huo-xiao-shi-guang/covers/7c6429d6-e2e0-43fd-9ca8-0a7faa74fcce.jpg'" target="_blank">
           <img src="http://bsyimg3.cdn.krcom.cn/static20131031/miaopai20140729/pc-static/images_01/shareIco_sina01.png" alt="分享到新浪微博">
               <a/>
              <!--      {% if page.image %}-->
@@ -61,9 +65,6 @@ layout: default
 <!--            </li>-->
 <!--          {% endfor %}-->
         </ul>
-      </div>
-      <div class="post-shownotes">
-        {{ page.content | markdownify }}
       </div>
     </div>
   </div>
